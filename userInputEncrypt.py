@@ -9,7 +9,7 @@ def caesar(text, shift, encrypt=True):
     alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
     if not encrypt:
-        shift = - shift
+        shift = - shift #reverses
     
     shifted_alphabet = alphabet[shift:] + alphabet[:shift]
     translation_table = str.maketrans(alphabet + alphabet.upper(), shifted_alphabet + shifted_alphabet.upper())
@@ -23,8 +23,21 @@ def decrypt(text, shift):
     return caesar(text, shift, encrypt=False)
 
 
+option = input("Would you like to encrypt or decrypt? (Choose e or d): " )
 
-encrypted_text = encrypt('SecretText', 3)
-print(encrypted_text)
+if option == "e":
+    
+    text= input("Enter text you would like encrypted: ")
+    encrypted_text = encrypt(text, 3)
+    print("Encrypted: " + encrypted_text)
+elif option == "d":
+    text= input("Enter text you would like decrypted: ")
+  
+    decrypted_text = decrypt(text,3) #issue with decryption, shift functionality doesnt work..
+    
+    print("Decrypted: " + decrypted_text)
+
+else:
+    print("Not a valid option. Try again.")
 
 
