@@ -23,21 +23,8 @@ def decrypt(text, shift):
     return caesar(text, shift, encrypt=False)
 
 
-option = input("Would you like to encrypt or decrypt? (Choose e or d): " )
-
-if option == "e":
-    
-    text= input("Enter text you would like encrypted: ")
-    encrypted_text = encrypt(text, 3)
-    print("Encrypted: " + encrypted_text)
-elif option == "d":
-    text= input("Enter text you would like decrypted: ")
-  
-    decrypted_text = decrypt(text,3) #issue with decryption, shift functionality doesnt work..
-    
-    print("Decrypted: " + decrypted_text)
-
-else:
-    print("Not a valid option. Try again.")
-
+text= input("Enter text you would like encrypted: ")
+encrypted_text = encrypt(text, 3)
+print("Unecrypted text: " + text)
+print("Encrypted: " + encrypted_text)
 
